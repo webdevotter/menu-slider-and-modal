@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 :root {
   --modal-duration: 1s;
   --primary-color: #30336b;
-  --seondary-color: #be2edd;
+  --secondary-color: #be2edd;
 }
 
 * {
@@ -13,9 +13,13 @@
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Menu Slider Styling  */
+body.show-nav {
+  /* Width of nav */
+  transform: translateX(200px);
+}
 
 nav {
   background-color: var(--primary-color);
@@ -25,7 +29,7 @@ nav {
   top: 0;
   left: 0;
   width: 200px;
-  height: 100vh;
+  height: 100%;
   z-index: 100;
   transform: translateX(-100%);
 }
@@ -65,8 +69,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Landing Page Styling */
-
 header {
   background-color: var(--primary-color);
   color: #fff;
@@ -76,7 +78,7 @@ header {
   text-align: center;
 }
 
-heading h1 {
+header h1 {
   margin: 0;
 }
 
@@ -86,7 +88,7 @@ header p {
 
 button,
 input[type='submit'] {
-  background-color: var(--seondary-color);
+  background-color: var(--secondary-color);
   border: 0;
   border-radius: 5px;
   color: #fff;
@@ -116,8 +118,6 @@ button:focus {
   max-width: 100%;
   width: 800px;
 }
-
-/* Modal Styling */
 
 .modal-container {
   background-color: rgba(0, 0, 0, 0.6);
@@ -156,7 +156,7 @@ button:focus {
 
 .modal-header h3 {
   margin: 0;
-  border-bottom: 1px solid #333;
+  /* border-bottom: 1px solid #333; */
 }
 
 .modal-content {
@@ -183,4 +183,14 @@ button:focus {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
